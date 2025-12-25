@@ -17,7 +17,7 @@ export default function AttendanceDashboard() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("https://attendance-predictor.manalmaati8.workers.dev");
+      const res = await fetch("https://attendance-predictor.manalmaati8.workers.dev/");
       if (!res.ok) throw new Error("API error");
       const data = await res.json();
 
@@ -662,12 +662,14 @@ const styles = {
     fontWeight: 'bold',
     color: '#D4AF37',
   },
-  areaChart: {
+   areaChart: {
     display: 'flex',
     gap: '8px',
     alignItems: 'flex-end',
     height: '250px',
     padding: '20px 10px',
+    overflowX: 'auto',
+    overflowY: 'hidden',
   },
   areaBar: {
     flex: 1,
